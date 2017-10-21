@@ -1,0 +1,16 @@
+$background-color: #f4f4f4;
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    line-height: normal;
+}
+
+#root {
+    background: $background-color;
+}
+
+h2{
+  text-align: center;
+}
