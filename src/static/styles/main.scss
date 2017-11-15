@@ -1,0 +1,712 @@
+@import "animate.css";
+
+:root {
+  --font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --color-gray-darker: #111f29;
+  --color-gray-dark: #acb6bc;
+  --color-gray: #8a98a9;
+  --color-gray-light: #d2dadd;
+  --color-gray-lighter: #ebedee;
+  --color-primary: #1288ef;
+  --transition-default: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+$primary-color: #243136;
+$secondary-color: #00708C;
+$light-color: #DAEBF2;
+$highlight-color: #C5A25D;
+$lowlight-color: #1CA5B8;
+$bgwhite-color: #ffffff;
+$lightbgWhite-color: #fafafa;
+
+$primary-font: 'Open Sans', sans-serif;
+$secondary-font: 'Source Sans Pro', sans-serif;
+$highlight-font: 'Federo', sans-serif;
+$font-awesome: FontAwesome;
+
+.gradient {
+  background: #ffb700; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(#ffb700, #ff8801); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#ffb700, #ff8801); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#ffb700, #ff8801); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#ffb700, #ff8801);
+}
+
+body {
+  font-family: $primary-font;
+  background: url("../images/bg-sky.jpg") no-repeat;
+  //background-color: $lightbgWhite-color;
+  background-size: 100% 100%;
+  height: 100vh;
+  background-attachment: fixed;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.clearfix:after {
+  content: " ";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+
+*, html {
+  -webkit-font-smoothing: antialiased;
+}
+
+.f_os {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.hideScroll {
+  overflow: hidden
+}
+
+.f_ss {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.f_fed {
+  font-family: 'Federo', sans-serif;
+}
+
+p {
+  color: rgba(3, 3, 3, 0.97);
+  font-size: 15px;
+  line-height: 1.5em;
+}
+
+.App {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  //flex-direction: row;
+  //height: 100vh;
+}
+
+h1 {
+  font-size: 25px;
+}
+
+h2 {
+  font-size: 23px;
+  color: $light-color;
+  font-weight: 400;
+  font-family: $secondary-font;
+}
+
+h3 {
+  font-size: 20px;
+  font-family: $secondary-font;
+  color: $light-color;
+}
+
+h4 {
+  font-size: 18px;
+  font-family: $secondary-font;
+  color: $light-color;
+  font-weight: 400;
+}
+
+h5 {
+  font-size: 16px;
+}
+
+h6 {
+  font-size: 14px;
+}
+
+h2.title {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 20px;
+
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    top: calc(100% + 5px);
+  }
+  &:after {
+    height: 3px;
+    width: 80%;
+    left: 10%;
+    background: $primary-color;
+  }
+  &:before {
+    top: calc(100% + 6px);
+    height: 1px;
+    width: 100%;
+    left: 0;
+    background: $secondary-color;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  padding: 0 10px;
+  @media only screen and (max-width: 650px) {
+    flex-direction: column;
+  }
+}
+
+.column__side {
+  width: 30%;
+  background-color: $primary-color;
+  border-radius: 20px;
+
+  @media only screen and (max-width: 760px) {
+    width: 40%;
+  }
+  @media only screen and (max-width: 650px) {
+    width: 100%;
+  }
+}
+
+.column__main {
+  width: 70%;
+  background-color: $primary-color;
+  border-radius: 20px;
+  margin-left: 10px;
+  padding: 20px;
+  @media only screen and (max-width: 760px) {
+    width: 60%;
+    //width: 77%;
+
+  }
+  @media only screen and (max-width: 650px) {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}
+
+.headerWrap {
+  background-color: $primary-color;
+}
+
+.title-web {
+  font-size: 16px;
+}
+
+.title--small {
+  font-size: 14px;
+  font-weight: normal;
+  color: $light-color;
+}
+
+.title--route {
+  font-size: 22px;
+  text-transform: uppercase;
+  @media only screen and (max-width: 650px) {
+    font-size: 20px;
+  }
+  @media only screen and (max-width: 450px) {
+    font-size: 18px;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  &:hover, &:focus {
+    text-decoration: none;
+    color: $light-color;
+    transition-delay: 0.5s;
+  }
+  &.active {
+
+  }
+}
+
+.tagline__title {
+  color: $light-color;
+
+}
+
+.wrapper {
+  padding: 10px;
+}
+
+/* BEM *** */
+
+.block__elem {
+  color: #042;
+}
+
+.form {
+}
+
+.form--theme-xmas {
+}
+
+.form--simple {
+}
+
+.form__input {
+}
+
+.form__submit {
+}
+
+.form__submit--disabled {
+}
+
+.button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  color: $light-color;
+  font-weight: bold;
+  outline: none;
+  @extend .gradient;
+  font-family: $secondary-font;
+  @media only screen and (max-width: 760px) {
+    padding: 5px 10px;
+  }
+}
+
+button {
+  &:focus {
+    outline: none !important;
+  }
+  &::-moz-focus-inner {
+    border: 0 !important;
+  }
+}
+
+.buttonContainer {
+  clear: both;
+  padding-top: 0px;
+}
+
+.button--style-primary {
+  @extend .gradient;
+  width: 100%;
+  cursor: pointer;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  outline: none;
+  &:hover {
+    background: #ff8801;
+  }
+}
+
+.button--small {
+  background: $primary-color;
+}
+
+.button--center {
+  display: table;
+  margin: 0 auto;
+}
+
+.fa-angle-double-down {
+  color: $light-color;
+}
+
+.float {
+  float: left;
+}
+
+.float--none {
+  float: none;
+}
+
+.float--right {
+  float: right;
+}
+
+.center {
+  margin: 0 auto;
+  max-width: 978px;
+}
+
+.flex1 {
+  display: flex;
+  flex-direction: row;
+}
+
+.skills--title {
+  align-items: flex-start;
+  min-width: 200px;
+}
+
+.progress__container {
+  background: $secondary-color;
+  height: 20px;
+  align-items: flex-end;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.progressed {
+  background: $highlight-color;
+  height: 20px;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.prof--value {
+  color: $light-color;
+  font-weight: 800;
+  font-size: 13px;
+  padding-right: 20px;
+}
+
+.bgWhite {
+  background-color: $bgwhite-color;
+}
+
+.pull--left {
+  float: left;
+}
+
+.pull--right {
+  float: right;
+}
+
+.width100 {
+  width: 100%;
+}
+
+.full--progress {
+  position: relative;
+  &:before {
+    content: '';
+    background: $primary-color;
+    height: 1px;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    position: absolute;
+
+  }
+}
+
+.progressed--status {
+  border-bottom: 8px solid $highlight-color;
+  position: absolute;
+  bottom: 1px;
+}
+
+/*
+.bar {
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,#87d4d7), color-stop(100%,#8bfbff));
+  height: 6px;
+  width: 0%;
+}
+
+.animating {
+  -webkit-animation: progress 4s linear;
+}
+
+@-webkit-keyframes progress {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+*/
+
+.url {
+  display: block;
+  background-color: $primary-color;
+  padding: 10px;
+  border-radius: 10px;
+  color: $light-color;
+  font-size: medium;
+  width: 100%;
+  text-align: center;
+  @media only screen and (max-width: 760px) {
+    padding: 5px;
+  }
+  @media only screen and (max-width: 400px) {
+    font-size: small;
+  }
+  &:hover {
+    transition: .5s ease-in;
+    transition-duration: .5s;
+    background-color: $secondary-color;
+  }
+}
+
+.url--link {
+}
+
+.btn {
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  cursor: pointer;
+  padding: 10px 40px;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  outline: none;
+  position: relative;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  background: $secondary-color;
+  color: $light-color;
+  outline: none;
+  @media only screen and (max-width: 760px) {
+    padding: 5px 20px;
+  }
+}
+
+.btn.focus, .btn:focus, .btn:hover {
+  color: $light-color;
+  text-decoration: none;
+}
+
+.jump__letters {
+  position: relative;
+}
+
+.footerWrap {
+  background-color: $primary-color;
+  padding: 20px 10px;
+  align-items: flex-end;
+
+  //align-self: flex-end;
+  p {
+    color: $light-color;
+    font-size: x-small;
+    margin: 0;
+  }
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.error-message {
+  height: 20px;
+  font-size: 13px;
+  color: red;
+  text-transform: capitalize;
+}
+
+.button--right {
+  float: right;
+  margin: 5px 10px 0 0;
+}
+
+input {
+  font-family: $secondary-font;
+  background: $bgwhite-color;
+  color: $primary-color;
+}
+
+.dateContainer {
+  background: $primary-color;
+  ul {
+    li {
+      h4 {
+        //font-family: $primary-font;
+        span {
+        }
+      }
+    }
+  }
+  .datePicker {
+    background: none;
+    outline: none;
+    border: none;
+    text-align: center;
+    color: $light-color;
+    font-family: $highlight-font;
+  }
+}
+
+.title--calender {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1;
+  span {
+    display: block;
+    font-size: 17px;
+  }
+}
+
+.opacitDim {
+  opacity: 0.5;
+  &:before {
+    opacity: 0.5;
+  }
+}
+
+.hightlightText {
+  color: $highlight-color;
+  font-family: $highlight-font;
+}
+
+.passengerCount {
+  padding-top: 3px;
+}
+
+.errorMessage {
+  position: relative;
+  font-family: $primary-font;
+  font-size: 12px;
+  color: red;
+  min-height: 20px;
+  span {
+    //position: absolute;
+    top: 0;
+    left: 5px;
+  }
+}
+
+.priceRangeContainer {
+  font-family: $primary-font;
+  .input-range {
+    padding-top: 80px;
+    height: 66px;
+    span {
+      font-family: $highlight-font;
+    }
+  }
+}
+
+.input-range__label-container {
+  font-family: $highlight-color;
+}
+
+.input-range__label-container {
+  background-color: $primary-color;
+}
+
+.flights--selected--title {
+  p {
+    color: #ffffff;
+  }
+}
+
+.column--header {
+  width: 100%;
+  position: relative;
+  @media only screen and (max-width: 550px) {
+    padding-bottom: 10px;
+  }
+  &:before {
+    position: absolute;
+    content: '';
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #a3bfd5;
+    background: #d3dbe0;
+    background: -webkit-linear-gradient(#d3dbe0, #a3bfd5);
+    background: -o-linear-gradient(#d3dbe0, #a3bfd5);
+    background: -moz-linear-gradient(#d3dbe0, #a3bfd5);
+    background: linear-gradient(#d3dbe0, #a3bfd5);
+  }
+}
+
+.flex__start {
+  float: left;
+  @media only screen and (max-width: 760px) {
+    text-align: center;
+    float: none;
+  }
+}
+
+.flex__end {
+  float: right;
+  @media only screen and (max-width: 760px) {
+    text-align: center;
+    float: none;
+  }
+}
+
+.dateContainer ul li:before {
+  background: $light-color;
+}
+
+.overlay {
+  display: none;
+  .overlay--container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    height: 60%;
+    background-color: $primary-color;
+    padding: 15px;
+    p {
+      color: $light-color;
+    }
+  }
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  left: 0;
+  z-index: 99;
+}
+
+.button--book {
+  text-align: center;
+  width: auto;
+  height: 28px;
+  padding: 5px 21px;
+  position: relative;
+  z-index: 99;
+  margin: 25px 10px 0 10px;
+}
+
+.title--route, .flights--selected--date {
+  font-family: $highlight-font;
+}
+.tripText{
+  font-family: $secondary-font;
+}
+.error--result {
+  color: $light-color;
+  padding-top: 20px;
+}
+
+.title--fprice {
+  font-family: $highlight-font;
+  color: #C5A25D;
+}
+.button--search{
+  max-width: 200px;
+  margin: 0 auto;
+}
+

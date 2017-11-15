@@ -1,0 +1,248 @@
+//* HOME PAGE **//
+/*.homePage {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  //background: rgba(0,0,0,0.6);
+  h1 {
+    font-size: 50px;
+    color: #ffffff;
+    font-weight: 800;
+    letter-spacing: -0.06em;
+    @media only screen and (max-width: 760px) {
+      font-size: 35px;
+    }
+    @media only screen and (max-width: 450px) {
+      font-size: 30px;
+    }
+    span {
+      display: block;
+      letter-spacing: 1em;
+      color: $highlight-color;
+      border-bottom: 1px dashed $highlight-color;
+      display: table;
+      margin: 0 auto;
+    }
+  }
+  h4 {
+    font-size: 26px;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: 800;
+    letter-spacing: -0.07em;
+  }
+}*/
+
+.brand {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  color: #ffffff;
+  font-size: 40px;
+}
+
+.socialNav {
+  display: flex;
+  justify-content: center;
+  margin-top: 21px;
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li {
+      float: left;
+      a {
+        display: block;
+        margin: 0 5px;
+        position: relative;
+        background: transparent;
+        text-decoration: none;
+        color: #ffffff;
+        &:before {
+          content: '';
+          font-size: 29px;
+          font-family: FontAwesome;
+          @media only screen and (max-width: 450px) {
+            font-size: 22px;
+          }
+        }
+        &.facebook:before {
+          content: '\f230';
+        }
+        &.twitter:before {
+          content: '\f099';
+        }
+        &.dribble:before {
+          content: '\f17d';
+        }
+        &.instagram:before {
+          content: '\f16d';
+        }
+        &.linkedin:before {
+          content: '\f0e1';
+        }
+        &.github:before {
+          content: '\f09b';
+        }
+      }
+      a.selected {
+      }
+      a:hover {
+        transition: all 0.3s;
+        color: $light-color;
+      }
+    }
+  }
+}
+
+.my_skills {
+  background: $primary-color;
+  padding: 20px 20px;
+  display: flex;
+  ul {
+    list-style: none;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    @media only screen and (max-width: 760px) {
+      display: table;
+    }
+    li {
+      float: left;
+      flex-direction: row;
+      width: 25%;
+      color: $light-color;
+      align-items: center;
+      @media only screen and (max-width: 760px) {
+        width: 50%;
+        height: 50%;
+        display: block;
+        float: none;
+        margin-bottom: 10px;
+      }
+      @media only screen and (max-width: 400px) {
+        width: 100%;
+        height: auto;
+      }
+      i {
+        display: table;
+        margin: 0 auto;
+      }
+      div {
+        color: $light-color;
+        p {
+          color: $light-color;
+          font-size: 15px;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+.workDetails {
+  background: $lowlight-color;
+  color: $light-color;
+  padding: 30px 10px;
+  h4 {
+    font-size: 22px;
+  }
+  .title_comp {
+    font-size: 18px;
+    cursor: pointer;
+    padding: 0 0 0 30px;
+    position: relative;
+    &:before {
+      content: '\f13a';
+      position: absolute;
+      top: 50%;
+      margin-top: -8px;
+      left: 5px;
+      font-family: $font-awesome;
+    }
+
+  }
+  i {
+    padding-right: 5px;
+  }
+  i:before {
+    font-size: 10px;
+  }
+  h4 {
+    margin: 0;
+  }
+  h2 {
+    margin: 0;
+    padding-bottom: 10px;
+  }
+  p {
+    color: $light-color;
+  }
+
+}
+
+.companyNames ul {
+  li {
+    position: relative;
+    padding-left: 19px;
+  }
+  li:before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    left: 0px;
+    top: 7px;
+    background: #ffffff;
+    position: absolute;
+  }
+}
+
+.title_comp_container {
+  padding-bottom: 10px;
+}
+
+.compDesc {
+  padding: 10px 0;
+  padding-bottom: 10px;
+  border-top: 1px dashed #ffffff;
+  ul {
+    li {
+      position: relative;
+      font-size: 15px;
+      padding: 5px 0 5px 30px;
+      &:before {
+        content: "\F18E";
+        position: absolute;
+        font-family: FontAwesome;
+        font-size: 15px;
+        top: 6px;
+        left: 5px;
+      }
+    }
+  }
+}
+
+.companies_details {
+  padding: 10px 10px;
+  &:nth-child(even) {
+    background: $secondary-color;
+  }
+  &:nth-child(odd) {
+    background: $primary-color;
+  }
+}
+
+.prof--value {
+
+}
+
+.flights--selected--title {
+  //float: none;
+  //text-align: center;
+  .title--route {
+    //text-align: center;
+  }
+}

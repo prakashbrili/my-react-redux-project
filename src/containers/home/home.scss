@@ -1,0 +1,264 @@
+
+.searchTypes {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    float: right;
+    padding-top: 3px;
+
+    li {
+      float: left;
+      color: #ffffff;
+      border-radius: 4px;
+      text-align: center;
+      padding: 7px 0px 7px 0px;
+      position: relative;
+      cursor: pointer;
+      letter-spacing: -0.07em;
+      font-weight: 400;
+      .checkTripRound{
+        //background: #ffffff;
+        border: 2px solid #ffffff;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        display: inline-block;
+        margin: 0 2px;
+        top: 5px;
+        position: relative;
+      }
+      .trip-text-one{
+        padding-right: 5px;
+      }
+      .trip-text-two{
+        padding-left: 5px;
+      }
+      .checkTripSelected{
+        position: relative;
+        &:before{
+          content: '';
+          position: absolute;
+          left: 1px;
+          top: 1px;
+          background: #ffb700;
+          background: -webkit-linear-gradient(#ffb700, #ff8801);
+          background: -o-linear-gradient(#ffb700, #ff8801);
+          background: -moz-linear-gradient(#ffb700, #ff8801);
+          background: linear-gradient(#ffb700, #ff8801);
+          width: 16px;
+          height: 16px;
+          border-radius: 50%;
+        }
+      }
+
+      &:nth-child(2) {
+        //background-color: red;
+      }
+    }
+  }
+}
+
+
+.inputContainer {
+  input {
+    margin: 0 0 10px;
+  }
+}
+
+.inputCity {
+  position: relative;
+  &:before {
+    font-family: FontAwesome;
+    content: "\f277";
+    color: #243136;
+    position: absolute;
+    font-size: 17px;
+    top: 11px;
+    left: 10px;
+  }
+}
+
+//* END of Date Picker **/
+.passengersContainer {
+  clear: both;
+  padding-top: 5px;
+  h4.passengerTitle {
+    color: #ffffff;
+    font-size: 14px;
+    text-align: center;
+    padding-top: 7px;
+  }
+  ul {
+    margin: 0 auto;
+    li {
+      float: left;
+      font-size: 13px;
+      text-align: center;
+      position: relative;
+      cursor: pointer;
+      span {
+        position: relative;
+      }
+    }
+    .minus, .plus {
+      width: 25px;
+      height: 25px;
+    }
+    .minus:before {
+      font-family: FontAwesome;
+      content: "\f056";
+      color: #ffffff;
+      position: absolute;
+      font-size: 21px;
+      top: 3px;
+      left: 3px;
+    }
+    .plus:before {
+      font-family: FontAwesome;
+      content: "\F055";
+      color: #ffffff;
+      position: absolute;
+      font-size: 21px;
+      top: 3px;
+      left: 3px;
+    }
+    .passengerCount {
+      font-size: 20px;
+      font-weight: 800;
+      width: 30px;
+    }
+    .plus {
+    }
+  }
+  .countBtns {
+    padding: 2px 0 0;
+    ul {
+      display: table;
+      margin: 0 auto;
+    }
+  }
+}
+
+
+//* INPUT RANGE CONTAINER ** /
+
+.priceRangeContainer {
+  padding: 10px 10px 10px;
+
+  @media only screen and (max-width: 500px) {
+    padding: 15px 10px 10px;
+  }
+  h4 {
+    text-align: center;
+  }
+  .input-range {
+    padding-top: 80px;
+    span {
+       font-family: 'Open Sans', sans-serif;
+    }
+    .input-range__slider {
+      background: #ff8801;
+      background: -webkit-linear-gradient(#ffb700, #ff8801);
+      background: -o-linear-gradient(#ffb700, #ff8801);
+      background: -moz-linear-gradient(#ffb700, #ff8801);
+      background: linear-gradient(#ffb700, #ff8801);
+      border: 1px solid #ff8801;
+    }
+    .input-range__track--active {
+      background: #ff8801;
+    }
+    .input-range__label--min {
+      left: 11px;
+    }
+    .input-range__label--max {
+      right: 24px;
+    }
+  }
+  p {
+    color: #ffffff;
+  }
+}
+
+.priceRange {
+  margin-top: 40px;
+}
+.priceRangeContainer{
+  padding: 10px 20px 10px;
+}
+
+.priceRangeContainer .input-range .input-range__slider {
+  background: #ff8801;
+  background: -webkit-linear-gradient(#ffb700, #ff8801);
+  background: -o-linear-gradient(#ffb700, #ff8801);
+  background: -moz-linear-gradient(#ffb700, #ff8801);
+  background: linear-gradient(#ffb700, #ff8801);
+  border: 1px solid #ff8801;
+  width: 25px;
+  height: 25px;
+  top: -4px;
+}
+
+
+.input-range__label-container {
+  color: #ffffff;
+}
+
+.input-range__label--min, .input-range__label--max {
+  bottom: 0 !important;
+  position: absolute;
+}
+
+.input-range__slider:before {
+  font-family: FontAwesome;
+  content: "\F0C9";
+  color: #ffffff;
+  position: absolute;
+  font-size: 14px;
+  top: 5px;
+  left: 6px;
+  transform: rotate(90deg);
+}
+
+.input-range__label--value {
+  position: absolute;
+  top: -35px;
+}
+
+.input-range__label--value{
+  margin-top: -10px;
+}
+
+.flights--selected--title{
+  font-size: 30px;
+  padding-top: 5px;
+  @media only screen and (max-width: 400px) {
+    text-align: center;
+    float: none;
+  }
+  .title--route{
+    @media only screen and (max-width: 760px) {
+      text-align: center;
+      float: none;
+      font-size: 20px;
+    }
+  }
+  .flights--selected--date{
+    @media only screen and (max-width: 760px) {
+      padding-bottom: 10px;
+    }
+    @media only screen and (max-width: 400px) {
+      text-align: center;
+      float: none;
+    }
+  }
+}
+.flights--selected--date{
+  font-size: 20px;
+}
+
+.flight--content{
+  max-height: 550px;
+  overflow: scroll;
+}
+

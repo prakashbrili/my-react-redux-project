@@ -32,6 +32,7 @@
     "html-webpack-plugin": "2.24.0",
     "http-proxy-middleware": "0.17.2",
     "jest": "16.0.2",
+    "moment": "^2.18.1",
     "json-loader": "0.5.4",
     "node-sass": "^3.10.1",
     "object-assign": "4.1.0",
@@ -51,12 +52,16 @@
     "whatwg-fetch": "1.0.0"
   },
   "dependencies": {
-    "react": "^15.3.2",
-    "react-dom": "^15.3.2",
+    "classnames": "^2.2.5",
     "lodash": "^3.10.1",
+    "react": "^15.3.2",
+    "react-datepicker": "^0.60.2",
+    "react-dom": "^15.3.2",
+    "react-input-range": "^1.2.1",
     "react-redux": "^4.0.0",
     "react-router": "^2.0.1",
-    "redux": "^3.0.4"
+    "redux": "^3.0.4",
+    "underscore": "^1.8.3"
   },
   "scripts": {
     "start": "node scripts/start.js",

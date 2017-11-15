@@ -1,0 +1,88 @@
+.flights {
+  display: flex;
+  flex-direction: column; }
+  @media only screen and (max-width: 400px) {
+    .flights .flights--departure {
+      padding-bottom: 10px; } }
+
+.flights__detail {
+  padding: 0px 0 15px 0;
+  position: relative; }
+  .flights__detail:after {
+    position: absolute;
+    content: '';
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #a3bfd5;
+    background: #d3dbe0;
+    /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#d3dbe0, #a3bfd5);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#d3dbe0, #a3bfd5);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#d3dbe0, #a3bfd5);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#d3dbe0, #a3bfd5); }
+
+.flights__detail__container {
+  display: flex;
+  justify-content: space-between; }
+  @media only screen and (max-width: 500px) {
+    .flights__detail__container {
+      flex-direction: column; } }
+
+@media only screen and (max-width: 500px) {
+  .flights--arrival {
+    padding-top: 10px; } }
+
+.flights__detail {
+  display: flex;
+  justify-content: space-between; }
+  @media only screen and (max-width: 400px) {
+    .flights__detail {
+      flex-direction: column; } }
+  .flights__detail h2 {
+    font-size: 12px; }
+  .flights__detail h4 {
+    font-size: 14px; }
+
+.flights__price .title--fprice {
+  font-size: 25px;
+  padding-top: 5px; }
+
+.flights--inDetails {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+
+.flights--image {
+  position: relative;
+  border: 1px solid #ffffff; }
+  @media only screen and (max-width: 550px) {
+    .flights--image {
+      width: 118px;
+      height: 80px;
+      margin-top: 10px; } }
+  .flights--image:before {
+    content: '';
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 99; }
+  .flights--image img {
+    margin: 0;
+    float: left;
+    width: 100%;
+    height: 100%;
+    position: absolute; }
+
+.flights__price {
+  font-size: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+
+/*# sourceMappingURL=flightDetail.css.map */

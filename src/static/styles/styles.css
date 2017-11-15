@@ -1,0 +1,778 @@
+@import url(animate.css);
+@import url(animate.css);
+:root {
+  --font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --color-gray-darker: #111f29;
+  --color-gray-dark: #acb6bc;
+  --color-gray: #8a98a9;
+  --color-gray-light: #d2dadd;
+  --color-gray-lighter: #ebedee;
+  --color-primary: #1288ef;
+  --transition-default: cubic-bezier(0.215, 0.61, 0.355, 1); }
+
+.gradient, .button, .button--style-primary {
+  background: #ffb700;
+  /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(#ffb700, #ff8801);
+  /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#ffb700, #ff8801);
+  /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#ffb700, #ff8801);
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#ffb700, #ff8801); }
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background: url("../images/bg-sky.jpg") no-repeat;
+  background-size: 100% 100%;
+  height: 100vh;
+  background-attachment: fixed; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none; }
+
+.clearfix:after {
+  content: " ";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both; }
+
+*, html {
+  -webkit-font-smoothing: antialiased; }
+
+.f_os {
+  font-family: 'Open Sans', sans-serif; }
+
+.hideScroll {
+  overflow: hidden; }
+
+.f_ss {
+  font-family: 'Source Sans Pro', sans-serif; }
+
+.f_fed {
+  font-family: 'Federo', sans-serif; }
+
+p {
+  color: rgba(3, 3, 3, 0.97);
+  font-size: 15px;
+  line-height: 1.5em; }
+
+.App {
+  display: flex;
+  width: 100%;
+  flex-direction: column; }
+
+h1 {
+  font-size: 25px; }
+
+h2 {
+  font-size: 23px;
+  color: #DAEBF2;
+  font-weight: 400;
+  font-family: "Source Sans Pro", sans-serif; }
+
+h3 {
+  font-size: 20px;
+  font-family: "Source Sans Pro", sans-serif;
+  color: #DAEBF2; }
+
+h4 {
+  font-size: 18px;
+  font-family: "Source Sans Pro", sans-serif;
+  color: #DAEBF2;
+  font-weight: 400; }
+
+h5 {
+  font-size: 16px; }
+
+h6 {
+  font-size: 14px; }
+
+h2.title {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 20px; }
+  h2.title:before, h2.title:after {
+    content: '';
+    position: absolute;
+    top: calc(100% + 5px); }
+  h2.title:after {
+    height: 3px;
+    width: 80%;
+    left: 10%;
+    background: #243136; }
+  h2.title:before {
+    top: calc(100% + 6px);
+    height: 1px;
+    width: 100%;
+    left: 0;
+    background: #00708C; }
+
+.container {
+  display: flex;
+  flex-direction: row;
+  padding: 0 10px; }
+  @media only screen and (max-width: 650px) {
+    .container {
+      flex-direction: column; } }
+
+.column__side {
+  width: 30%;
+  background-color: #243136;
+  border-radius: 20px; }
+  @media only screen and (max-width: 760px) {
+    .column__side {
+      width: 40%; } }
+  @media only screen and (max-width: 650px) {
+    .column__side {
+      width: 100%; } }
+
+.column__main {
+  width: 70%;
+  background-color: #243136;
+  border-radius: 20px;
+  margin-left: 10px;
+  padding: 20px; }
+  @media only screen and (max-width: 760px) {
+    .column__main {
+      width: 60%; } }
+  @media only screen and (max-width: 650px) {
+    .column__main {
+      width: 100%;
+      margin-left: 0;
+      margin-top: 30px;
+      margin-bottom: 30px; } }
+
+.headerWrap {
+  background-color: #243136; }
+
+.title-web {
+  font-size: 16px; }
+
+.title--small {
+  font-size: 14px;
+  font-weight: normal;
+  color: #DAEBF2; }
+
+.title--route {
+  font-size: 22px;
+  text-transform: uppercase; }
+  @media only screen and (max-width: 650px) {
+    .title--route {
+      font-size: 20px; } }
+  @media only screen and (max-width: 450px) {
+    .title--route {
+      font-size: 18px; } }
+
+ul {
+  list-style: none; }
+
+a {
+  text-decoration: none;
+  cursor: pointer; }
+  a:hover, a:focus {
+    text-decoration: none;
+    color: #DAEBF2;
+    transition-delay: 0.5s; }
+
+.tagline__title {
+  color: #DAEBF2; }
+
+.wrapper {
+  padding: 10px; }
+
+/* BEM *** */
+.block__elem {
+  color: #042; }
+
+.button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  color: #DAEBF2;
+  font-weight: bold;
+  outline: none;
+  font-family: "Source Sans Pro", sans-serif; }
+  @media only screen and (max-width: 760px) {
+    .button {
+      padding: 5px 10px; } }
+
+button:focus {
+  outline: none !important; }
+button::-moz-focus-inner {
+  border: 0 !important; }
+
+.buttonContainer {
+  clear: both;
+  padding-top: 0px; }
+
+.button--style-primary {
+  width: 100%;
+  cursor: pointer;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  outline: none; }
+  .button--style-primary:hover {
+    background: #ff8801; }
+
+.button--small {
+  background: #243136; }
+
+.button--center {
+  display: table;
+  margin: 0 auto; }
+
+.fa-angle-double-down {
+  color: #DAEBF2; }
+
+.float {
+  float: left; }
+
+.float--none {
+  float: none; }
+
+.float--right {
+  float: right; }
+
+.center {
+  margin: 0 auto;
+  max-width: 978px; }
+
+.flex1 {
+  display: flex;
+  flex-direction: row; }
+
+.skills--title {
+  align-items: flex-start;
+  min-width: 200px; }
+
+.progress__container {
+  background: #00708C;
+  height: 20px;
+  align-items: flex-end;
+  width: 100%;
+  margin-bottom: 5px; }
+
+.progressed {
+  background: #C5A25D;
+  height: 20px;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px; }
+
+.prof--value {
+  color: #DAEBF2;
+  font-weight: 800;
+  font-size: 13px;
+  padding-right: 20px; }
+
+.bgWhite {
+  background-color: #ffffff; }
+
+.pull--left {
+  float: left; }
+
+.pull--right {
+  float: right; }
+
+.width100 {
+  width: 100%; }
+
+.full--progress {
+  position: relative; }
+  .full--progress:before {
+    content: '';
+    background: #243136;
+    height: 1px;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    position: absolute; }
+
+.progressed--status {
+  border-bottom: 8px solid #C5A25D;
+  position: absolute;
+  bottom: 1px; }
+
+/*
+.bar {
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,#87d4d7), color-stop(100%,#8bfbff));
+  height: 6px;
+  width: 0%;
+}
+
+.animating {
+  -webkit-animation: progress 4s linear;
+}
+
+@-webkit-keyframes progress {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+*/
+.url {
+  display: block;
+  background-color: #243136;
+  padding: 10px;
+  border-radius: 10px;
+  color: #DAEBF2;
+  font-size: medium;
+  width: 100%;
+  text-align: center; }
+  @media only screen and (max-width: 760px) {
+    .url {
+      padding: 5px; } }
+  @media only screen and (max-width: 400px) {
+    .url {
+      font-size: small; } }
+  .url:hover {
+    transition: .5s ease-in;
+    transition-duration: .5s;
+    background-color: #00708C; }
+
+.btn {
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  cursor: pointer;
+  padding: 10px 40px;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  outline: none;
+  position: relative;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  background: #00708C;
+  color: #DAEBF2;
+  outline: none; }
+  @media only screen and (max-width: 760px) {
+    .btn {
+      padding: 5px 20px; } }
+
+.btn.focus, .btn:focus, .btn:hover {
+  color: #DAEBF2;
+  text-decoration: none; }
+
+.jump__letters {
+  position: relative; }
+
+.footerWrap {
+  background-color: #243136;
+  padding: 20px 10px;
+  align-items: flex-end; }
+  .footerWrap p {
+    color: #DAEBF2;
+    font-size: x-small;
+    margin: 0; }
+
+.overlay {
+  background: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  position: absolute; }
+
+.hide {
+  display: none; }
+
+.show {
+  display: block; }
+
+.error-message {
+  height: 20px;
+  font-size: 13px;
+  color: red;
+  text-transform: capitalize; }
+
+.button--right {
+  float: right;
+  margin: 5px 10px 0 0; }
+
+input {
+  font-family: "Source Sans Pro", sans-serif;
+  background: #ffffff;
+  color: #243136; }
+
+.dateContainer {
+  background: #243136; }
+  .dateContainer .datePicker {
+    background: none;
+    outline: none;
+    border: none;
+    text-align: center;
+    color: #DAEBF2;
+    font-family: "Federo", sans-serif; }
+
+.title--calender {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1; }
+  .title--calender span {
+    display: block;
+    font-size: 17px; }
+
+.opacitDim {
+  opacity: 0.5; }
+  .opacitDim:before {
+    opacity: 0.5; }
+
+.hightlightText {
+  color: #C5A25D;
+  font-family: "Federo", sans-serif; }
+
+.passengerCount {
+  padding-top: 3px; }
+
+.errorMessage {
+  position: relative;
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
+  color: red;
+  min-height: 20px; }
+  .errorMessage span {
+    top: 0;
+    left: 5px; }
+
+.priceRangeContainer {
+  font-family: "Open Sans", sans-serif; }
+  .priceRangeContainer .input-range {
+    padding-top: 80px;
+    height: 66px; }
+    .priceRangeContainer .input-range span {
+      font-family: "Federo", sans-serif; }
+
+.input-range__label-container {
+  font-family: #C5A25D; }
+
+.input-range__label-container {
+  background-color: #243136; }
+
+.flights--selected--title p {
+  color: #ffffff; }
+
+.column--header {
+  width: 100%;
+  position: relative; }
+  @media only screen and (max-width: 550px) {
+    .column--header {
+      padding-bottom: 10px; } }
+  .column--header:before {
+    position: absolute;
+    content: '';
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #a3bfd5;
+    background: #d3dbe0;
+    background: -webkit-linear-gradient(#d3dbe0, #a3bfd5);
+    background: -o-linear-gradient(#d3dbe0, #a3bfd5);
+    background: -moz-linear-gradient(#d3dbe0, #a3bfd5);
+    background: linear-gradient(#d3dbe0, #a3bfd5); }
+
+.flex__start {
+  float: left; }
+  @media only screen and (max-width: 760px) {
+    .flex__start {
+      text-align: center;
+      float: none; } }
+
+.flex__end {
+  float: right; }
+  @media only screen and (max-width: 760px) {
+    .flex__end {
+      text-align: center;
+      float: none; } }
+
+.dateContainer ul li:before {
+  background: #DAEBF2; }
+
+.overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  left: 0;
+  z-index: 99; }
+  .overlay .overlay--container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    height: 60%;
+    background-color: #243136;
+    padding: 15px; }
+    .overlay .overlay--container p {
+      color: #DAEBF2; }
+
+.button--book {
+  text-align: center;
+  width: auto;
+  height: 28px;
+  padding: 5px 21px;
+  position: relative;
+  z-index: 99;
+  margin: 25px 10px 0 10px; }
+
+.title--route, .flights--selected--date {
+  font-family: "Federo", sans-serif; }
+
+.tripText {
+  font-family: "Source Sans Pro", sans-serif; }
+
+.error--result {
+  color: #DAEBF2;
+  padding-top: 20px; }
+
+.title--fprice {
+  font-family: "Federo", sans-serif;
+  color: #C5A25D; }
+
+.button--search {
+  max-width: 200px;
+  margin: 0 auto; }
+
+.headerWrap {
+  height: 63px;
+  width: 100%;
+  z-index: 99;
+  margin-bottom: 17px; }
+  @media only screen and (max-width: 450px) {
+    .headerWrap {
+      background: none; } }
+
+@media only screen and (max-width: 450px) {
+  .mobileWrapper {
+    position: fixed;
+    min-height: 65px;
+    width: 100%;
+    display: block; } }
+
+.brandContainer {
+  position: relative;
+  top: 17px;
+  left: 0;
+  padding-left: 13px;
+  z-index: 999;
+  -webkit-transition: .5s ease-in-out;
+  -moz-transition: .5s ease-in-out;
+  -o-transition: .5s ease-in-out;
+  transition: .5s ease-in-out; }
+  @media only screen and (max-width: 450px) {
+    .brandContainer {
+      position: fixed;
+      min-height: 65px;
+      width: 100%;
+      display: block;
+      top: 0;
+      background-color: rgba(0, 0, 0, 0.7);
+      left: 0; } }
+  .brandContainer a.brand {
+    font-size: 20px;
+    font-family: "Open Sans", sans-serif;
+    color: #DAEBF2;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 4px solid #DAEBF2;
+    padding: 2px 18px;
+    position: relative; }
+    @media only screen and (max-width: 450px) {
+      .brandContainer a.brand {
+        font-size: 20px;
+        display: table;
+        margin: 12px auto; } }
+    .brandContainer a.brand:before, .brandContainer a.brand:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 10px;
+      height: 10px;
+      margin-top: -5px;
+      border-radius: 50%;
+      background: #DAEBF2; }
+      @media only screen and (max-width: 450px) {
+        .brandContainer a.brand:before, .brandContainer a.brand:after {
+          top: 12px;
+          width: 7px;
+          height: 7px; } }
+    .brandContainer a.brand:before {
+      left: 6px; }
+    .brandContainer a.brand:after {
+      right: 6px; }
+
+.linkedin {
+  color: #ffffff;
+  font-size: 25px;
+  margin-right: 20px; }
+  @media only screen and (max-width: 550px) {
+    .linkedin {
+      display: none; } }
+
+.align--right {
+  float: right; }
+
+.emailform {
+  max-width: 600px;
+  margin: 0 auto;
+  /*margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 300px;*/ }
+
+.form {
+  clear: both;
+  padding: 10px 10px 10px 10px; }
+  @media only screen and (max-width: 650px) {
+    .form {
+      display: table;
+      margin: 0 auto;
+      width: 100%; } }
+  .form .form--list ul {
+    margin: 0; }
+    .form .form--list ul li {
+      width: 33.3%;
+      float: left; }
+      @media only screen and (max-width: 450px) {
+        .form .form--list ul li {
+          width: 100%;
+          float: none; } }
+  .form .form--list input {
+    border: none;
+    padding: 10px;
+    width: 100%; }
+  .form .form--list .form--content {
+    padding: 5px; }
+    @media only screen and (max-width: 450px) {
+      .form .form--list .form--content {
+        padding: 3px; } }
+  .form .form--list .input--description {
+    width: 100%;
+    padding: 10px 10px 10px 10px;
+    min-height: 140px; }
+  .form textarea {
+    border: none;
+    outline: none; }
+
+.button--form--submit {
+  margin-top: 20px; }
+
+input {
+  width: 100%;
+  padding: 10px 10px 10px 35px;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  text-transform: capitalize;
+  font-size: 14px; }
+
+.dateContainer {
+  padding: 12px 0px;
+  border-radius: 4px; }
+  .dateContainer ul li {
+    width: 50%;
+    float: left;
+    position: relative; }
+    .dateContainer ul li h4 {
+      font-size: 12px;
+      font-weight: 700;
+      font-weight: 300; }
+    .dateContainer ul li:before {
+      content: '';
+      position: absolute;
+      width: 1px;
+      top: 20%;
+      right: 0;
+      height: 60%; }
+  .dateContainer ul li:nth-child(2):before {
+    content: '';
+    width: 0px; }
+  .dateContainer .datePicker {
+    background: none;
+    outline: none;
+    border: none;
+    text-align: center;
+    color: #C5A25D;
+    padding: 23px 5px 0px;
+    width: 100%; }
+    @media only screen and (max-width: 900px) {
+      .dateContainer .datePicker {
+        font-size: 18px; } }
+  .dateContainer .calenderTitle {
+    text-align: center; }
+
+/** React-date picker modification **/
+.react-datepicker-popper {
+  width: 300px !important; }
+  .react-datepicker-popper .react-datepicker__day-name, .react-datepicker-popper .react-datepicker__day {
+    color: #000;
+    display: inline-block;
+    width: 27px;
+    margin: 0px !important; }
+  .react-datepicker-popper .react-datepicker__current-month, .react-datepicker-popper .react-datepicker__day-name {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600; }
+  .react-datepicker-popper .react-datepicker__day {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px; }
+  .react-datepicker-popper .datepick {
+    font-family: 'Lato', sans-serif; }
+
+.react-datepicker {
+  border: 1px solid #005D79; }
+
+.react-datepicker__header {
+  background: #C5A25D; }
+
+.react-datepicker__navigation--next:hover {
+  border-left-color: #b3b2b2; }
+
+.react-datepicker__navigation--next:hover {
+  border-left-color: #b3b2b2; }
+
+.react-datepicker__navigation--next {
+  border-left-color: #005D79; }
+
+.react-datepicker__navigation--previous {
+  border-right-color: #005D79; }
+
+.react-datepicker-popper[data-placement^="bottom"] .react-datepicker__triangle {
+  border-bottom-color: #C5A25D; }
+
+.react-datepicker__input-container {
+  position: relative; }
+  .react-datepicker__input-container:before {
+    font-family: FontAwesome;
+    content: "\f073";
+    color: #ffffff;
+    position: absolute;
+    font-size: 17px;
+    top: 4px;
+    left: 50%;
+    margin-left: -7px;
+    z-index: 0; }
+
+.react-datepicker-wrapper {
+  width: 100%; }
+
+.react-datepicker__input-container {
+  width: 100%; }
+
+/*# sourceMappingURL=styles.css.map */

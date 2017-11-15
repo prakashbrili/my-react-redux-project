@@ -1,0 +1,86 @@
+
+.headerWrap{
+  height: 63px;
+  width: 100%;
+  z-index: 99;
+  margin-bottom: 17px;
+  @media only screen and (max-width: 450px) {
+    background: none;
+  }
+}
+
+.mobileWrapper{
+  @media only screen and (max-width: 450px) {
+    position: fixed;
+    min-height: 65px;
+    width: 100%;
+    display: block;
+  }
+}
+.brandContainer{
+  position: relative;
+  top: 17px;
+  left: 0;
+  padding-left: 13px;
+  z-index: 999;
+  -webkit-transition: .5s ease-in-out;
+  -moz-transition: .5s ease-in-out;
+  -o-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  @media only screen and (max-width: 450px) {
+    position: fixed;
+    min-height: 65px;
+    width: 100%;
+    display: block;
+    top: 0;
+    background-color: rgba(0,0,0,0.7);
+    left: 0;
+  }
+  a.brand{
+    font-size: 20px;
+    font-family: "Open Sans", sans-serif;
+    color: #DAEBF2;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 4px solid $light-color;
+    padding: 2px 18px;
+    position: relative;
+    @media only screen and (max-width: 450px){
+      font-size: 20px;
+      display: table;
+      margin: 12px auto;
+    }
+    &:before,&:after{
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 10px;
+      height: 10px;
+      margin-top: -5px;
+      border-radius: 50%;
+      background: $light-color;
+      @media only screen and (max-width: 450px){
+        top: 12px;
+        width: 7px;
+        height: 7px;
+      }
+    }
+    &:before{
+      left: 6px;
+    }
+    &:after{
+      right: 6px;
+    }
+  }
+}
+.linkedin{
+  color: #ffffff;
+  font-size: 25px;
+  margin-right: 20px;
+  @media only screen and (max-width: 550px) {
+    display: none;
+  }
+}
+.align--right{
+  float: right;
+}

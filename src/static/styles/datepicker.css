@@ -1,0 +1,75 @@
+.dateContainer {
+  padding: 12px 0px;
+  border-radius: 4px; }
+  .dateContainer ul li {
+    width: 50%;
+    float: left;
+    position: relative; }
+    .dateContainer ul li h4 {
+      font-size: 12px;
+      font-weight: 700;
+      font-weight: 300; }
+    .dateContainer ul li:before {
+      content: '';
+      position: absolute;
+      width: 1px;
+      top: 20%;
+      right: 0;
+      height: 60%; }
+  .dateContainer ul li:nth-child(2):before {
+    content: '';
+    width: 0px; }
+  .dateContainer .datePicker {
+    background: none;
+    outline: none;
+    border: none;
+    text-align: center;
+    color: #C5A25D;
+    font-size: 22px;
+    padding: 0px 5px 0px;
+    width: 100%; }
+    @media only screen and (max-width: 900px) {
+      .dateContainer .datePicker {
+        font-size: 18px; } }
+  .dateContainer .calenderTitle {
+    text-align: center; }
+
+/** React-date picker modification **/
+.react-datepicker-popper {
+  width: 300px !important; }
+  .react-datepicker-popper .react-datepicker__day-name, .react-datepicker-popper .react-datepicker__day {
+    color: #000;
+    display: inline-block;
+    width: 27px;
+    margin: 0px !important; }
+  .react-datepicker-popper .react-datepicker__current-month, .react-datepicker-popper .react-datepicker__day-name {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600; }
+  .react-datepicker-popper .react-datepicker__day {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px; }
+  .react-datepicker-popper .datepick {
+    font-family: 'Lato', sans-serif; }
+
+.react-datepicker {
+  border: 1px solid #005D79; }
+
+.react-datepicker__header {
+  background: #C5A25D; }
+
+.react-datepicker__navigation--next:hover {
+  border-left-color: #b3b2b2; }
+
+.react-datepicker__navigation--next:hover {
+  border-left-color: #b3b2b2; }
+
+.react-datepicker__navigation--next {
+  border-left-color: #005D79; }
+
+.react-datepicker__navigation--previous {
+  border-right-color: #005D79; }
+
+.react-datepicker-popper[data-placement^="bottom"] .react-datepicker__triangle {
+  border-bottom-color: #C5A25D; }
+
+/*# sourceMappingURL=datepicker.css.map */
